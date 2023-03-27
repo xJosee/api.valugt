@@ -4,7 +4,7 @@ const dpiRoutes = require('./routes/dpi.route');
 const licenciaRoutes = require('./routes/licencia.route');
 const cors = require('cors');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //middlewares
 app.use(cors());
