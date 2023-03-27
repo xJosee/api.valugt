@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
 });
 
 const options = {
-  key: fs.readFileSync(path.resolve('selfsigned.key')),
-  cert: fs.readFileSync(path.resolve('selfsigned.crt'))
+  key: fs.readFileSync(path.resolve('/src/selfsigned.key')),
+  cert: fs.readFileSync(path.resolve('/src/selfsigned.crt'))
 };
 
 https.createServer(options, app).listen(PORT);
