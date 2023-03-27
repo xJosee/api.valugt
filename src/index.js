@@ -6,8 +6,9 @@ const cors = require('cors');
 
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 
-const PORT = 43;
+const PORT = 443;
 
 //middlewares
 app.use(cors());
@@ -20,8 +21,8 @@ app.get('/', (req, res) => {
 });
 
 const options = {
-  key: fs.readFileSync('../../ssl/selfsigned.key'),
-  cert: fs.readFileSync('../../ssl/selfsigned.crt')
+  key: fs.readFileSync(path.resolve('selfsigned.key')),
+  cert: fs.readFileSync(path.resolve('selfsigned.crt'))
 };
 
 https.createServer(options, app).listen(PORT);
